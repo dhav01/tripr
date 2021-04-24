@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import fire from './Firebase'
+import '../Components/Style.css'
+import pic2 from '../Components/pic2.svg'
 
 //console.log(fire.auth().currentUser.displayName)
 export class LogOut extends Component {
@@ -32,9 +34,22 @@ export class LogOut extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello {this.state.name.toUpperCase()} </h1>
-        <button onClick={this.handleLogOut}>LogOut</button>
+      <div class='main'>
+        <div class='main-container'>
+          <div class='main-content'>
+            <h1>Hello {this.state.name.toUpperCase()} </h1>
+            <button class='btn' id='logout' onClick={this.handleLogOut}>
+              LogOut
+            </button>
+            <p>Welcome to TRIPR </p>
+            <p>
+              Tripr allows you to find the best way to reach your Destination
+            </p>
+          </div>
+          <div class='main-img-container'>
+            <img src={pic2} alt='Error' id='main-img' />
+          </div>
+        </div>
       </div>
     )
   }

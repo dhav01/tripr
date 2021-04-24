@@ -82,14 +82,14 @@ export class GetDataFromForm extends Component {
       <div key={key}>
         <div class='cardview'>
           <div class='source'>{value.airlines}</div>
-          <div>
+          <div class='timing'>
             {value.deptTime}-{value.arrivalTime}
           </div>
-          <div>{value.duration}</div>
-          <div>{value.source}</div>
+          <div class='duration'>{value.duration}</div>
+          <div class='source'>{value.source}</div>
           <div class='destination'>{value.destination}</div>
           <div class='departure'>{value.deptDate}</div>
-          <div>{value.price}</div>
+          <div class='price'>{value.price}</div>
           <button
             class='info-btn'
             hidden={value.seats == null ? true : false}
@@ -102,11 +102,43 @@ export class GetDataFromForm extends Component {
           </button>
           {Object.keys(this.state.showMore).length > 0 &&
             this.state.showMore[key] && (
-              <div class='more-info' id={`id-${key}`}>
-                {' '}
-                <p id='seats'>Seats Available: </p> {value.seats}
-                <div>{value.dept}</div>
-                <div>{value.arrival}</div>
+              <div class='cardview2'>
+                <div class='more-info' id={`id-${key}`}>
+                  {' '}
+                  <div class='seatsavailable'>
+                    <p>Seats Available: </p> {value.seats}
+                  </div>
+                  <div class='airports'>
+                    <div class='airport'>
+                      <p>Source: </p>
+                      {value.dept}
+                    </div>
+                    <div class='airport'>
+                      <p>Destination: </p>
+                      {value.arrival}
+                    </div>
+                    <div>
+                      {/* <button
+                        class='book-btn'
+                        onClick={(e) => {
+                          e.preventDefault()
+                          let link = value.link
+                          window.open({ link }, '_blank')
+                        }}
+                      >
+                        Book
+                      </button> */}
+                      <a
+                        class='book-btn'
+                        href={value.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        Book
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
         </div>

@@ -31,7 +31,7 @@ export class Form extends Component {
 
   foo() {
     console.log('baz')
-    window.scrollTo(0, 730)
+    window.scrollTo(0, 600)
   }
 
   handleInfo = (event) => {
@@ -61,6 +61,67 @@ export class Form extends Component {
           </div>
         </div>
 
+        <div class='canvas'>
+          <div class='center'>
+            <div class='property-card'>
+              <a href='#'>
+                <div class='property-image'></div>
+              </a>
+              <div class='property-image-title'>
+                <h5>Try Searching</h5>
+              </div>
+              <div class='property-description'>
+                <h5> Accurate Flight Search </h5>
+                <p>
+                  Here at Tripr we make sure that our Users get accurate data
+                  about the flights that are available as per Users demand.
+                </p>
+              </div>
+              <a href='#'>
+                <div class='property-social-icons'></div>
+              </a>
+            </div>
+
+            <div class='property-card'>
+              <a href='#'>
+                <div class='property-image1'></div>
+              </a>
+              <div class='property-image-title'>
+                <h5>Let's Check</h5>
+              </div>
+              <div class='property-description'>
+                <h5> Latest Flight Status </h5>
+                <p>
+                  Tripr makes sure that our Users gets latest status for the
+                  Flight they choose.
+                </p>
+              </div>
+              <a href='#'>
+                <div class='property-social-icons'></div>
+              </a>
+            </div>
+
+            <div class='property-card'>
+              <a href='#'>
+                <div class='property-image2'></div>
+              </a>
+              <div class='property-image-title'>
+                <h5>Free to use</h5>
+              </div>
+              <div class='property-description'>
+                <h5> Free Platform </h5>
+                <p>
+                  Tripr is a free platform, developed for helping the Society.
+                  If you want to support us you can Donate!
+                </p>
+              </div>
+              <a href='#'>
+                <div class='property-social-icons'></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div class='search' id='search'>
           <div class='search__container'>
             <div class='search__content'>
@@ -68,60 +129,63 @@ export class Form extends Component {
             </div>
             <div class='form'>
               <form onSubmit={this.handleSubmit}>
-                <div>
-                  <input
-                    type='text'
-                    placeholder='Source'
-                    name='source'
-                    value={this.state.source}
-                    onChange={this.handleInfo}
-                  />
-                </div>
-                <div>
-                  <input
-                    type='text'
-                    placeholder='Destination'
-                    name='destination'
-                    value={this.state.destination}
-                    onChange={this.handleInfo}
-                  />
-                </div>
-                <div>
-                  <input
-                    type='date'
-                    placeholder='select Date'
-                    name='departuredate'
-                    value={this.state.departuredate}
-                    onChange={this.handleInfo}
-                  />
-                </div>
-                <div>{this.tryDate()}</div>
-                <div>
-                  <input
-                    type='number'
-                    placeholder='No. of Adults'
-                    name='adults'
-                    value={this.state.adults}
-                    onChange={this.handleInfo}
-                  />
-                </div>
-                <div>
-                  <input
-                    type='number'
-                    placeholder='No. of Children'
-                    name='children'
-                    value={this.state.children}
-                    onChange={this.handleInfo}
-                  />
-                </div>
-                <div>
-                  <input
-                    type='number'
-                    placeholder='No. of Infants'
-                    name='infants'
-                    value={this.state.infants}
-                    onChange={this.handleInfo}
-                  />
+                <div class='data-form'>
+                  <h1>Let's find a Flight as per your convenience</h1>
+                  <div>
+                    <input
+                      type='text'
+                      placeholder='Source'
+                      name='source'
+                      value={this.state.source}
+                      onChange={this.handleInfo}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type='text'
+                      placeholder='Destination'
+                      name='destination'
+                      value={this.state.destination}
+                      onChange={this.handleInfo}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type='date'
+                      placeholder='select Date'
+                      name='departuredate'
+                      value={this.state.departuredate}
+                      onChange={this.handleInfo}
+                    />
+                  </div>
+                  <div>{this.tryDate()}</div>
+                  <div>
+                    <input
+                      type='number'
+                      placeholder='No. of Adults'
+                      name='adults'
+                      value={this.state.adults}
+                      onChange={this.handleInfo}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type='number'
+                      placeholder='No. of Children'
+                      name='children'
+                      value={this.state.children}
+                      onChange={this.handleInfo}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type='number'
+                      placeholder='No. of Infants'
+                      name='infants'
+                      value={this.state.infants}
+                      onChange={this.handleInfo}
+                    />
+                  </div>
                 </div>
                 <div>
                   <GetDataFromForm
@@ -140,12 +204,12 @@ export class Form extends Component {
             <div class='footer__link--wrapper'>
               <div class='footer__link--items'>
                 <h2>About Website</h2>
-                <a href='/email'>Email Us!</a>
+                <a href='mailto:tripperplan2020@gmail.com'>Email Us!</a>
                 <a href='/t&c'>Terms & Conditions</a>
               </div>
               <div class='footer__link--items'>
                 <h2>About Developers</h2>
-                <a href='/email'>Email</a>
+                <a href='mailto:agrawaldhaval45@gmail.com'>Email</a>
                 <a href='/instagram'>Instagram</a>
               </div>
             </div>
