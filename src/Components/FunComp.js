@@ -37,7 +37,9 @@ function FunComp() {
 
   return (
     <>
-      <h1>count value: {count}</h1>
+      <h1>Hello World</h1>
+
+      {/* <h1>count value: {count}</h1>
       <div>
         <button onClick={increment}>+</button>
         <button onClick={incrementBy10}>+ by 10</button>
@@ -65,7 +67,7 @@ function FunComp() {
         ></input>
       </form>
       {name.firstName}
-      {name.lastName}
+      {name.lastName} */}
     </>
     //here spread operator is used to print firstname and lastname together
     //if you remove spread operator, only one of them is going to be printed on screen

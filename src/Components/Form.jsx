@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 import GetDataFromForm from './GetDataFromForm'
 import '../Components/Style.css'
 import pic1 from '../Components/pic1.svg'
+import FunComp from './FunComp'
+import { Route } from 'react-router'
+import {
+  BrowserRouter as Router,
+  Link,
+  Navlink,
+  Switch,
+} from 'react-router-dom'
 
 export class Form extends Component {
   constructor(props) {
@@ -31,7 +39,7 @@ export class Form extends Component {
 
   foo() {
     console.log('baz')
-    window.scrollTo(0, 600)
+    window.scrollTo(0, 2000)
   }
 
   handleInfo = (event) => {
@@ -162,6 +170,9 @@ export class Form extends Component {
                   <div>
                     <input
                       type='number'
+                      onkeypress='return event.charCode >= 48'
+                      min='1'
+                      oninput="validity.valid||(value='');"
                       placeholder='No. of Adults'
                       name='adults'
                       value={this.state.adults}
@@ -171,6 +182,9 @@ export class Form extends Component {
                   <div>
                     <input
                       type='number'
+                      min='0'
+                      step='1'
+                      oninput="validity.valid||(value='');"
                       placeholder='No. of Children'
                       name='children'
                       value={this.state.children}
@@ -180,6 +194,9 @@ export class Form extends Component {
                   <div>
                     <input
                       type='number'
+                      min='0'
+                      step='1'
+                      oninput="validity.valid||(value='');"
                       placeholder='No. of Infants'
                       name='infants'
                       value={this.state.infants}
@@ -192,6 +209,7 @@ export class Form extends Component {
                     source={this.state.source}
                     destination={this.state.destination}
                     departureDate={this.state.departuredate.toString()}
+                    adults={this.state.adults}
                   ></GetDataFromForm>
                 </div>
               </form>
@@ -205,7 +223,14 @@ export class Form extends Component {
               <div class='footer__link--items'>
                 <h2>About Website</h2>
                 <a href='mailto:tripperplan2020@gmail.com'>Email Us!</a>
-                <a href='/t&c'>Terms & Conditions</a>
+                <a
+                  href='terms'
+                  onClick={() => {
+                    ;<Link to='/terms'>terms & conditions</Link>
+                  }}
+                >
+                  Terms & Conditions
+                </a>
               </div>
               <div class='footer__link--items'>
                 <h2>About Developers</h2>

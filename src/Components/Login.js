@@ -17,6 +17,9 @@ export default class Login extends Component {
   }
 
   handleLogin = () => {
+    if (this.state.email.length === 0 && this.state.password.length === 0) {
+      alert('Please enter login credentials')
+    }
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -26,6 +29,8 @@ export default class Login extends Component {
       .catch((err) => {
         switch (err.code) {
           case 'auth/invalid-email':
+            alert('Incorrect Email-id')
+            break
           case 'auth/user-disabled':
           case 'auth/user-not-found':
             this.setState({
@@ -33,9 +38,7 @@ export default class Login extends Component {
             })
             break
           case 'auth/wrong-password':
-            this.setState({
-              pwdError: err.message,
-            })
+            alert('Incorrect Password')
             break
         }
       })

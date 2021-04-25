@@ -22,7 +22,13 @@ export class SignUp extends Component {
     let reference = fire.database().ref().child('users')
     if (this.state.password !== this.state.confirmPassword) {
       // window.alert('password Do not Match')
-      console.log('password Do not Match')
+      alert('password Do not Match')
+    } else if (
+      this.state.email.length === 0 ||
+      this.state.password.length === 0 ||
+      this.state.name === 0
+    ) {
+      alert('Please fill up the Sign Up form correctly')
     } else {
       const data = {
         name: this.state.name,
@@ -83,7 +89,7 @@ export class SignUp extends Component {
         })
         .catch((err) => {
           // window.alert("Error: "+ err.toString())
-          console.log('Error: ' + err.toString())
+          alert('Error: ' + err.toString())
         })
     }
   }

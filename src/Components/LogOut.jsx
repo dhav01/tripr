@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import fire from './Firebase'
 import '../Components/Style.css'
 import pic2 from '../Components/pic2.svg'
+import { Link } from 'react-router-dom'
 
 //console.log(fire.auth().currentUser.displayName)
 export class LogOut extends Component {
@@ -41,6 +42,16 @@ export class LogOut extends Component {
             <button class='btn' id='logout' onClick={this.handleLogOut}>
               LogOut
             </button>
+            <a
+              class='glass-button'
+              id='redirect'
+              href='/'
+              onClick={() => {
+                ;<Link to='/'>Home</Link>
+              }}
+            >
+              Go to Home
+            </a>
             <p>Welcome to TRIPR </p>
             <p>
               Tripr allows you to find the best way to reach your Destination

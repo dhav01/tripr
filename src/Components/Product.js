@@ -46,25 +46,27 @@ class Cart extends Component {
   render() {
     return (
       <div>
-        <h1>Quantity: {this.state.qty}</h1>
-        <button onClick={this.updateValue}>Increase</button>
+        <h1>Hello World</h1>
+        <h1>Hello Dhaval</h1>
+        {/* <h1>Quantity: {this.state.qty}</h1>
+        <button onClick={this.updateValue}>Increase</button> */}
       </div>
     )
   }
-  componentDidMount() {
-    console.log('within componentDidMount method')
-  }
-  componentDidUpdate(prevProps, prevState) {
-    console.log('within componentDidUpdate method')
-  }
+  // componentDidMount() {
+  //   console.log('within componentDidMount method')
+  // }
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log('within componentDidUpdate method')
+  // }
 
-  static getDerivedStateFromProps(props, state) {
-    console.log('within getderivedstatefromprops method')
-    console.log(props.qty)
-    console.log(state.qty)
-    if (props.qty !== state.qty) {
-      return { qty: props.qty }
-    }
-    return null
-  }
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log('within getderivedstatefromprops method')
+  //   console.log(props.qty)
+  //   console.log(state.qty)
+  //   if (props.qty !== state.qty) {
+  //     return { qty: props.qty }
+  //   }
+  //   return null
+  // }
 }

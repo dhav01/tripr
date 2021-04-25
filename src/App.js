@@ -3,6 +3,8 @@ import fire from './Components/Firebase'
 import Form from './Components/Form'
 import SignUp from './Components/SignUp'
 import Login from './Components/Login'
+import FunComp from './Components/FunComp'
+import TandC from './Components/TandC'
 
 import {
   BrowserRouter as Router,
@@ -12,6 +14,7 @@ import {
   Switch,
 } from 'react-router-dom'
 import LogOut from './Components/LogOut'
+import Product from './Components/Product'
 
 export class App extends Component {
   constructor(props) {
@@ -68,12 +71,16 @@ export class App extends Component {
                 </Link>
               </li>
               <li class='navbar__item'>
+                <Link class='navbar__links' id='terms-page' to='/terms'>
+                  Terms
+                </Link>
+              </li>
+              <li class='navbar__item'>
                 <a
-                  onClick={() => this.foo()}
                   class='navbar__links'
-                  id='search-page'
+                  href='mailto:agrawaldhaval45@gmail.com'
                 >
-                  Search Flight
+                  Contact Us
                 </a>
               </li>
               <li class='navbar__item'>
@@ -95,6 +102,7 @@ export class App extends Component {
             </ul>
           </nav>
           <Switch>
+            <Route path='/terms' component={TandC} />
             {/* <Route path='/user' component={Login} /> */}
             {this.state.user == null ? (
               <Route path='/user' component={Login} />
@@ -103,7 +111,6 @@ export class App extends Component {
             )}
             <Route exact path='/' component={Form} />
           </Switch>
-          {/* <FunComp></FunComp> */}
 
           {/* {this.state.user ? <Form></Form> : <Login></Login>} */}
           {/* <Form></Form> */}

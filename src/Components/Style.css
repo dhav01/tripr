@@ -87,13 +87,39 @@
   background-color: var(--darkgray);
 }
 
+.glass-button {
+  display: inline-block;
+  padding: 14px 14px;
+  border: 0;
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: rgba(3, 198, 199, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.glass-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#redirect {
+  margin: 2rem;
+  text-decoration: none;
+}
+
 .main-container {
   display: flex;
   align-items: center;
   justify-self: center;
   width: 80%;
   margin: 0 auto;
-  height: 80vh;
+  height: 95vh;
   background-color: var(--darkgray);
 }
 
